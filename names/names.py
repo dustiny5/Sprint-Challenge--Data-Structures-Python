@@ -11,13 +11,12 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = []
+
 bst = BinarySearchTree('Jean Velazquez')
 for n_1 in names_1[1:]:
     bst.insert(n_1)
-for n_2 in names_2:
-    if bst.contains(n_2):
-        duplicates.append(n_2)
+
+duplicates = [n_2 for n_2 in names_2 if bst.contains(n_2)]
 
 
 # duplicates = []
